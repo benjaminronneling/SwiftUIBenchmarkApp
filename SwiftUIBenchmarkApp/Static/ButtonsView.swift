@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ButtonsView: View {
+    var numberOfElements = 1 
+    let maxColumns = 10
     var body: some View {
-        
+        let rows = (numberOfElements / maxColumns) + 1
             VStack(spacing: 2){
-                ForEach(0..<15){ _ in
+                ForEach(0..<rows){ r in
                     HStack(spacing: 2){
-                        ForEach(0..<10){ c in
+                        let remainingElements = (numberOfElements - (r * maxColumns))
+                        let columns = min(remainingElements, maxColumns)
+                        ForEach(0..<columns) { c in
                             Button("\(c)") {
                             }
                             .buttonStyle(.borderedProminent)

@@ -9,227 +9,1086 @@ import XCTest
 
 final class SwiftUITests: XCTestCase {
     
-    let iterationCountForStaticElementsTests = 4;
-    let iterationCountForAnimatedElementsTests = 4;
+    let repetitionCount = 10;
+    let iterationCountForAnimatedElementsTests = 10;
     
+    
+    let app = XCUIApplication()
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app.launch()
     }
     
+    override func tearDownWithError() throws {
+        app.terminate()
+    }
     
-    func testTextPerformance() throws {
+    func typeNumber(app: XCUIApplication, number: String) {
         
-        let app = XCUIApplication()
-        app.launch()
+        app.textFields["Enter number of elements"].tap()
         
+        let moreKey = app/*@START_MENU_TOKEN@*/.keys["more"]/*[[".keyboards",".keys[\"siffror\"]",".keys[\"more\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/
+        moreKey.tap()
+        
+        for char in number{
+            let key = app.keys["\(char)"]
+            key.tap()
+        }
+        app/*@START_MENU_TOKEN@*/.buttons["Return"]/*[[".keyboards",".buttons[\"retur\"]",".buttons[\"Return\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+    }
+     
+    
+    //     MARK: - Texts tests
+    
+    
+    func testTextPerformance_1() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForStaticElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
+            startMeasuring()
             app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
-             
+        }
+    }
+    
+    func testTextPerformance_2() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
         }
         
     }
     
-    func testButtonsPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-        
+    func testTextPerformance_4() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForStaticElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "4")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }     }
+    
+    func testTextPerformance_8() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "8")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testTextPerformance_16() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "16")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testTextPerformance_32() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "32")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testTextPerformance_64() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "64")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testTextPerformance_128() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "128")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testTextPerformance_256() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "256")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    
+    func testTextPerformance_512() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "512")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testTextPerformance_1024() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1024")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testTextPerformance_2048() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2048")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Texts"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    //     MARK: - Buttons tests
+    func testButtonsPerformance_1() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
             app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
-            
+        }
+    }
+    
+    func testButtonsPerformance_2() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_4() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "4")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_8() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "8")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_16() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "16")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_32() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "32")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_64() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "64")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_128() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "128")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_256() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "256")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_512() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "512")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_1024() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1024")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testButtonsPerformance_2048() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2048")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Buttons"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
         }
     }
     
     
-    func testImagesPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-        
+    //     MARK: - Images tests
+    func testImagesPerformance_1() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForStaticElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
+            startMeasuring()
             app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
         }
     }
     
-    
-    
-    func testBlurPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-        
+    func testImagesPerformance_2() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForStaticElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_4() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "4")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_8() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "8")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_16() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "16")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_32() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "32")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_64() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "64")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_128() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "128")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_256() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "256")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_512() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "512")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_1024() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1024")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testImagesPerformance_2048() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2048")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Images"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    //     MARK: - Blur tests
+    func testBlurPerformance_1() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
             app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
-            
         }
     }
     
-    
-    
-    func testListPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-         
+    func testBlurPerformance_2() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForStaticElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-             
-            app.buttons["List (CollectionView)"].tap()
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
-            
         }
     }
     
-    
-    
-    func testTextAnimationPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-        
+    func testBlurPerformance_4() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "4")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
-            app.buttons["Animation: text"].tap()
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
         }
     }
     
-    
-    
-    
-    func testButtonAnimationPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-        
+    func testBlurPerformance_8() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "8")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
-            app.buttons["Animation: buttons"].tap()
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
         }
     }
     
-    
-    
-    func testImageAnimationPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-        
+    func testBlurPerformance_16() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "16")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
-            app.buttons["Animation: images"].tap()
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
         }
     }
     
-    
-    func testBlurAnimationPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch()
-        
+    func testBlurPerformance_32() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "32")
         
         measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
-            app.buttons["Animation: blur"].tap()
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            app.terminate()
-            app.launch()
         }
     }
     
-    func testScrollAnimationPerformance() throws {
-        
-        let app = XCUIApplication()
-        app.launch() 
-        app.buttons["Animation: scroll"].tap()
-        
+    func testBlurPerformance_64() throws {
         let measureOptions = XCTMeasureOptions()
-        measureOptions.invocationOptions = [.manuallyStop]
-        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "64")
         
-        let list =  app.collectionViews.firstMatch
-        
-        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollDecelerationMetric],
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
                 options: measureOptions) {
-            
-            list.swipeUp(velocity: .fast)
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
             stopMeasuring()
-            list.swipeDown(velocity: .fast)
         }
     }
+    
+    func testBlurPerformance_128() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "128")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testBlurPerformance_256() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "256")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testBlurPerformance_512() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "512")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testBlurPerformance_1024() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1024")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testBlurPerformance_2048() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2048")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Blur"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    
+    //     MARK: - Collection view tests
+    func testCollectionViewPerformance_1() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_2() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_4() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "4")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_8() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "8")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_16() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "16")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_32() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "32")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_64() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "64")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_128() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "128")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_256() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "256")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_512() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "512")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_1024() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "1024")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    func testCollectionViewPerformance_2048() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        typeNumber(app: app, number: "2048")
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["CollectionView (List)"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    
+    //     MARK: - Typical app tests
+    func testTypicalAppPerformance_1() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.buttons["Typical App"].tap()
+            app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"].buttons["SwiftUI"].tap()
+            stopMeasuring()
+        }
+    }
+    
+    //     MARK: - App launch time tests
+    func testLaunchTimePerformance_1() throws {
+        let measureOptions = XCTMeasureOptions()
+        measureOptions.invocationOptions = [.manuallyStart,.manuallyStop]
+        measureOptions.iterationCount = repetitionCount
+        
+        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+                options: measureOptions) {
+            startMeasuring()
+            app.launch()
+            stopMeasuring()
+            app.terminate()
+        }
+    }
+    
+    //    func testTextAnimationPerformance() throws {
+    //
+    //        let app = XCUIApplication()
+    //        //
+    //        let measureOptions = XCTMeasureOptions()
+    //        measureOptions.invocationOptions = [.manuallyStop]
+    //        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+    //
+    //        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+    //                options: measureOptions) {
+    //
+    //            app.buttons["Animation: text"].tap()
+    //            stopMeasuring()
+    //
+    //            //        }
+    //    }
+    //
+    //
+    //
+    //
+    //    func testButtonAnimationPerformance() throws {
+    //
+    //        let app = XCUIApplication()
+    //        //
+    //        let measureOptions = XCTMeasureOptions()
+    //        measureOptions.invocationOptions = [.manuallyStop]
+    //        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+    //
+    //        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+    //                options: measureOptions) {
+    //
+    //            app.buttons["Animation: buttons"].tap()
+    //            stopMeasuring()
+    //
+    //            //        }
+    //    }
+    //
+    //
+    //
+    //    func testImageAnimationPerformance() throws {
+    //
+    //        let app = XCUIApplication()
+    //        //
+    //        let measureOptions = XCTMeasureOptions()
+    //        measureOptions.invocationOptions = [.manuallyStop]
+    //        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+    //
+    //        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+    //                options: measureOptions) {
+    //
+    //            app.buttons["Animation: images"].tap()
+    //            stopMeasuring()
+    //
+    //            //        }
+    //    }
+    //
+    //
+    //    func testBlurAnimationPerformance() throws {
+    //
+    //        let app = XCUIApplication()
+    //        //
+    //        let measureOptions = XCTMeasureOptions()
+    //        measureOptions.invocationOptions = [.manuallyStop]
+    //        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+    //
+    //        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+    //                options: measureOptions) {
+    //
+    //            app.buttons["Animation: blur"].tap()
+    //            stopMeasuring()
+    //
+    //            //        }
+    //    }
+    //
+    //    func testScrollAnimationPerformance() throws {
+    //
+    //        let app = XCUIApplication()
+    //        //        app.buttons["Animation: scroll"].tap()
+    //
+    //        let measureOptions = XCTMeasureOptions()
+    //        measureOptions.invocationOptions = [.manuallyStop]
+    //        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+    //
+    //        let list =  app.collectionViews.firstMatch
+    //
+    //        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app), XCTOSSignpostMetric.scrollDecelerationMetric],
+    //                options: measureOptions) {
+    //
+    //            list.swipeUp(velocity: .slow)
+    //            stopMeasuring()
+    //            list.swipeDown(velocity: .slow)
+    //        }
+    //    }
+    
+    
+    //    func testBlurAnimationPerformance2() throws {
+    //
+    //        let app = XCUIApplication()
+    //        //
+    //        let measureOptions = XCTMeasureOptions()
+    //        measureOptions.invocationOptions = [.manuallyStop]
+    //        measureOptions.iterationCount = iterationCountForAnimatedElementsTests
+    //
+    //        measure(metrics: [XCTCPUMetric(application: app), XCTMemoryMetric(application: app)],
+    //                options: measureOptions) {
+    //
+    //            app.buttons["Animation: scroll"].tap()
+    //            stopMeasuring()
+    //
+    //            //        }
+    //    }
     
 }

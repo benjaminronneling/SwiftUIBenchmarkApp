@@ -30,12 +30,16 @@ struct AnimatedText : View{
 }
 
 struct AnimatedTextView: View {
-    
+    var numberOfElements = 200
+    let maxColumns = 20
     var body: some View {
+        let rows = (numberOfElements / maxColumns) + 1
         VStack(spacing: 5){
-            ForEach(0..<30){ r in
+            ForEach(0..<rows){ r in
                 HStack(spacing: 5){
-                    ForEach(0..<20){ c in
+                    let remainingElements = (numberOfElements - (r * maxColumns))
+                    let columns = min(remainingElements, maxColumns)
+                    ForEach(0..<columns) { c in
                         AnimatedText(r: r, c: c)
                     }
                 }

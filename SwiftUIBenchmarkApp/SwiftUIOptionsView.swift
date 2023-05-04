@@ -11,6 +11,7 @@ import SwiftUI
 struct SwiftUIOptionsView: View {
     
     @State var presentView = false
+    @State var elementsCount = ""
     @State var tag = 1
     
     
@@ -21,43 +22,47 @@ struct SwiftUIOptionsView: View {
                 HStack{
                     Spacer()
                     VStack {
-                        createButton(text: "Texts", buttonTag: 1)
-                        createButton(text: "Buttons", buttonTag: 2)
-                        createButton(text: "Images", buttonTag: 3)
-                        createButton(text: "Blur", buttonTag: 4)
-                        createButton(text: "List (CollectionView)", buttonTag: 5)
-                        createButton(text: "Animation: text", buttonTag: 6)
-                        createButton(text: "Animation: buttons", buttonTag: 7)
-                        createButton(text: "Animation: images", buttonTag: 8)
-                        createButton(text: "Animation: blur", buttonTag: 9)
-                        createButton(text: "Animation: scroll", buttonTag: 10)
+                        createTextField(text: "Enter number of elements", tag: 0)
+                        
+                        Group{
+                            createButton(text: "Texts", buttonTag: 1)
+                            createButton(text: "Buttons", buttonTag: 2)
+                            createButton(text: "Images", buttonTag: 3)
+                            createButton(text: "Blur", buttonTag: 4)
+                            createButton(text: "CollectionView (List)", buttonTag: 5)
+//                            createButton(text: "Animation: text", buttonTag: 6)
+//                            createButton(text: "Animation: buttons", buttonTag: 7)
+//                            createButton(text: "Animation: images", buttonTag: 8)
+//                            createButton(text: "Animation: blur", buttonTag: 9)
+                            createButton(text: "Typical App", buttonTag: 10)
+                        }
                         
                     }
                     .frame(width: 300)
                     .navigationDestination(isPresented: $presentView) {
                         switch(tag){
                         case 1:
-                            TextView()
+                            TextView(numberOfElements: Int(elementsCount) ?? 1)
                         case 2:
-                            ButtonsView()
+                            ButtonsView(numberOfElements: Int(elementsCount ) ?? 1)
                         case 3:
-                            ImagesView()
+                            ImagesView(numberOfElements: Int(elementsCount ) ?? 1)
                         case 4:
-                            BlurView()
+                            BlurView(numberOfElements: Int(elementsCount ) ?? 1)
                         case 5:
-                            ListView()
+                            ListView(numberOfElements: Int(elementsCount ) ?? 1)
                         case 6:
-                            AnimatedTextView()
+                            AnimatedTextView(numberOfElements: Int(elementsCount ) ?? 1)
                         case 7:
-                            AnimatedButtonsView()
+                            AnimatedButtonsView(numberOfElements: Int(elementsCount ) ?? 1)
                         case 8:
-                            AnimatingImagesView()
+                            AnimatedImagesView(numberOfElements: Int(elementsCount ) ?? 1)
                         case 9:
-                            AnimatedBlurredView()
-                        case 10:
-                            ListView()
+                            AnimatedBlurredView(numberOfElements: Int(elementsCount ) ?? 1)
+                        case 10: 
+                            TypicalAppUIView(numberOfElements: Int(elementsCount ) ?? 1)
                         default:
-                            AnimatingImagesView()
+                            AnimatedImagesView(numberOfElements: Int(elementsCount ) ?? 1)
                         }
                         
                     }
@@ -70,6 +75,14 @@ struct SwiftUIOptionsView: View {
             .background(.orange)
         }
         
+    }
+    
+    func createTextField(text: String, tag: Int) -> some View {
+        
+        TextField(text, text: $elementsCount) 
+            .tag(tag)
+            .multilineTextAlignment(.center)
+            .modifier(CustomButtonModifier(backgroundColor: .white.opacity(0.2)))
     }
     
     func createButton(text: String, buttonTag: Int) -> some View {
@@ -85,10 +98,13 @@ struct SwiftUIOptionsView: View {
         }
         .modifier(CustomButtonModifier())
     }
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
 }
 
 struct CustomButtonModifier: ViewModifier {
-    let backgroundColor: Color = Color(.darkGray)
+    var backgroundColor: Color = Color(.darkGray)
     let cornerRadius: CGFloat = 10
     
     func body(content: Content) -> some View {

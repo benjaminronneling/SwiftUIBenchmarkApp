@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5225F82529DC0D93000DEF1D /* TypicalAppUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5225F82429DC0D93000DEF1D /* TypicalAppUIView.swift */; };
+		5287CB1129DB41140033B2C8 /* AnimatedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287CB1029DB41140033B2C8 /* AnimatedImagesView.swift */; };
 		52BB4E3529BB6A1B009D688F /* SwiftUIBenchmarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E3429BB6A1B009D688F /* SwiftUIBenchmarkApp.swift */; };
 		52BB4E3729BB6A1B009D688F /* SwiftUIOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E3629BB6A1B009D688F /* SwiftUIOptionsView.swift */; };
 		52BB4E3929BB6A1D009D688F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BB4E3829BB6A1D009D688F /* Assets.xcassets */; };
@@ -23,7 +25,6 @@
 		52BB4E7829BB6C55009D688F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E7729BB6C55009D688F /* CardView.swift */; };
 		52BB4E7A29BB6C96009D688F /* AnimatedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E7929BB6C96009D688F /* AnimatedTextView.swift */; };
 		52BB4E7C29BB6CAC009D688F /* AnimatedButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E7B29BB6CAC009D688F /* AnimatedButtonsView.swift */; };
-		52BB4E7E29BB6CD1009D688F /* AnimatingImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E7D29BB6CD1009D688F /* AnimatingImagesView.swift */; };
 		52BB4E8029BB6CE9009D688F /* AnimatedBlurredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E7F29BB6CE9009D688F /* AnimatedBlurredView.swift */; };
 		52BB4E8229BB6DD1009D688F /* SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BB4E8129BB6DD1009D688F /* SwiftUITests.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5225F82429DC0D93000DEF1D /* TypicalAppUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypicalAppUIView.swift; sourceTree = "<group>"; };
+		5287CB1029DB41140033B2C8 /* AnimatedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedImagesView.swift; sourceTree = "<group>"; };
 		52BB4E3129BB6A1B009D688F /* SwiftUIBenchmarkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBenchmarkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BB4E3429BB6A1B009D688F /* SwiftUIBenchmarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBenchmarkApp.swift; sourceTree = "<group>"; };
 		52BB4E3629BB6A1B009D688F /* SwiftUIOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIOptionsView.swift; sourceTree = "<group>"; };
@@ -65,7 +68,6 @@
 		52BB4E7729BB6C55009D688F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		52BB4E7929BB6C96009D688F /* AnimatedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTextView.swift; sourceTree = "<group>"; };
 		52BB4E7B29BB6CAC009D688F /* AnimatedButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButtonsView.swift; sourceTree = "<group>"; };
-		52BB4E7D29BB6CD1009D688F /* AnimatingImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingImagesView.swift; sourceTree = "<group>"; };
 		52BB4E7F29BB6CE9009D688F /* AnimatedBlurredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBlurredView.swift; sourceTree = "<group>"; };
 		52BB4E8129BB6DD1009D688F /* SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				52BB4E6D29BB6BEA009D688F /* ButtonsView.swift */,
 				52BB4E6F29BB6C04009D688F /* ImagesView.swift */,
 				52BB4E7129BB6C17009D688F /* BlurView.swift */,
+				5225F82429DC0D93000DEF1D /* TypicalAppUIView.swift */,
 				52BB4E6129BB6B3D009D688F /* List */,
 			);
 			path = Static;
@@ -171,8 +174,8 @@
 			children = (
 				52BB4E7929BB6C96009D688F /* AnimatedTextView.swift */,
 				52BB4E7B29BB6CAC009D688F /* AnimatedButtonsView.swift */,
-				52BB4E7D29BB6CD1009D688F /* AnimatingImagesView.swift */,
 				52BB4E7F29BB6CE9009D688F /* AnimatedBlurredView.swift */,
+				5287CB1029DB41140033B2C8 /* AnimatedImagesView.swift */,
 			);
 			path = Animated;
 			sourceTree = "<group>";
@@ -319,16 +322,17 @@
 			files = (
 				52BB4E7C29BB6CAC009D688F /* AnimatedButtonsView.swift in Sources */,
 				52BB4E7A29BB6C96009D688F /* AnimatedTextView.swift in Sources */,
-				52BB4E7E29BB6CD1009D688F /* AnimatingImagesView.swift in Sources */,
 				52BB4E6E29BB6BEA009D688F /* ButtonsView.swift in Sources */,
 				52BB4E3729BB6A1B009D688F /* SwiftUIOptionsView.swift in Sources */,
 				52BB4E3529BB6A1B009D688F /* SwiftUIBenchmarkApp.swift in Sources */,
+				5225F82529DC0D93000DEF1D /* TypicalAppUIView.swift in Sources */,
 				52BB4E7229BB6C17009D688F /* BlurView.swift in Sources */,
 				52BB4E7429BB6C35009D688F /* ListView.swift in Sources */,
 				52BB4E7629BB6C43009D688F /* DeckView.swift in Sources */,
 				52BB4E7029BB6C04009D688F /* ImagesView.swift in Sources */,
 				52BB4E8029BB6CE9009D688F /* AnimatedBlurredView.swift in Sources */,
 				52BB4E6C29BB6BC0009D688F /* TextView.swift in Sources */,
+				5287CB1129DB41140033B2C8 /* AnimatedImagesView.swift in Sources */,
 				52BB4E7829BB6C55009D688F /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -471,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -491,12 +495,14 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIBenchmarkApp/Preview Content\"";
 				DEVELOPMENT_TEAM = RZ58ABZJC9;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,12 +526,15 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIBenchmarkApp/Preview Content\"";
 				DEVELOPMENT_TEAM = RZ58ABZJC9;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,7 +557,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RZ58ABZJC9;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rabbheat.SwiftUIBenchmarkAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,7 +577,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RZ58ABZJC9;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rabbheat.SwiftUIBenchmarkAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,6 +596,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RZ58ABZJC9;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rabbheat.SwiftUIBenchmarkAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -605,6 +615,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RZ58ABZJC9;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rabbheat.SwiftUIBenchmarkAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

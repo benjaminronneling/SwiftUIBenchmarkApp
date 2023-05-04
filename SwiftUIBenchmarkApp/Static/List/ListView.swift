@@ -9,15 +9,16 @@ import SwiftUI
 
 struct ListView: View {
     
+    var numberOfElements = 1
     
     var body: some View {
             
             List{
-                ForEach(1..<100, id: \.self){ r in
+                ForEach(0..<numberOfElements, id: \.self){ r in
                     HStack(spacing: 0){
                         DeckView()
                             .frame(width: 176, height: 240)
-                        Spacer()
+                        Spacer() 
                         DeckView()
                             .frame(width: 176, height: 240)
                     }

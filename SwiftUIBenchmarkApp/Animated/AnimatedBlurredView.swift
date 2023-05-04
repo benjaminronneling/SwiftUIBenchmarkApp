@@ -30,13 +30,18 @@ struct AnimatedBlur : View{
 }
 
 struct AnimatedBlurredView: View {
+    var numberOfElements = 1
+    let maxColumns = 10
     var body: some View {
+        let rows = (numberOfElements / maxColumns) + 1
         VStack{
             Spacer()
             VStack(spacing: 2){
-                ForEach(0..<15){ r in
+                ForEach(0..<rows){ r in
                     HStack(spacing: 2){
-                        ForEach(0..<10){ c in
+                        let remainingElements = (numberOfElements - (r * maxColumns))
+                        let columns = min(remainingElements, maxColumns)
+                        ForEach(0..<columns) { c in
                             AnimatedBlur(r: r, c: c)
 
                         }

@@ -1,18 +1,15 @@
-//
-//  TextSwiftUIView.swift
-//  BenchmarkApp
-//
-//  Created by Macbook Pro on 2023-02-26.
-//
-
 import SwiftUI
-
 struct TextView: View {
+    var numberOfElements = 200
+    let maxColumns = 50
     var body: some View {
-            VStack(spacing: 0){
-                ForEach(0..<80){ _ in
+        let rows = (numberOfElements / maxColumns) + 1 
+        VStack(spacing: 0){
+                ForEach(0..<rows){ r in
                     HStack(spacing: 0){
-                        ForEach(0..<50){ c in
+                        let remainingElements = (numberOfElements - (r * maxColumns))
+                        let columns = min(remainingElements, maxColumns)
+                        ForEach(0..<columns) { c in
                             Text("\(c)")
                                 .font(.system(size: 6))
                         }
@@ -21,11 +18,5 @@ struct TextView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.orange)
-    }
-}
-
-struct TextView_Previews: PreviewProvider {
-    static var previews: some View {
-        TextView()
     }
 }
